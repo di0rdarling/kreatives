@@ -5,17 +5,17 @@ import ExploreIcon from '@material-ui/icons/Public';
 import SearchIcon from '@material-ui/icons/Search';
 import MentorIcon from '@material-ui/icons/School';
 import MessageIcon from '@material-ui/icons/Telegram';
-import Avatar from '../images/avatar-icon.jpg';
-import BackgroundImage from '../images/background-image.jpg';
-import IronMan from '../images/iron-man.jpg'
+import Avatar from '../images/avatar-icon-2.jpg';
+import BackgroundImage from '../images/iron-man.jpg';
 import SettingsIcon from '@material-ui/icons/Settings';
 
 const useStyles = makeStyles({
     root: {
-        display: 'flex'
+        display: 'flex',
+        width: '100%'
     },
     main: {
-        display: 'flex'
+        width: '100%'
     },
     sidebar: {
         width: 70,
@@ -46,26 +46,28 @@ const useStyles = makeStyles({
         fontSize: 100,
     },
     header: {
-        display: 'flex',
-        justifyContent: 'center',
-        position: 'relative'
+        backgroundSize: 'cover',
+        backgroundImage: `url(${BackgroundImage})`,
+        backgroundPosition: 'center',
+        height: 400
     },
     headerImage: {
         width: '1200px',
         height: '400px',
-        // position: 'absolute',
         zIndex: -1
     },
     profilePicture: {
         borderRadius: '50%',
-        height: 250
+        height: 250,
+        marginBottom: 16,
+        margin: '16px 0px'
     },
     profileDetails: {
-        position: 'absolute',
-        top: '50px',
-        left: '40%',
-        textAlign: 'center'
-    }
+        textAlign: 'center',
+    },
+    profileDetailsText: {
+        // color: 'white'
+    },
 })
 
 function App() {
@@ -106,17 +108,16 @@ function App() {
                     </IconButton>
                 </Tooltip>
             </div>
-            <div>
+            <div className={classes.main}>
                 <div className={classes.header}>
-                    <img src={IronMan} alt='iron-man' className={classes.headerImage} />
-                    {/* <img src={BackgroundImage} alt='background-image' className={classes.headerImage} /> */}
-                </div>
-                <div className={classes.profileDetails}>
-                    <img className={classes.profilePicture} src={Avatar} alt='profile-picture' />
-                    <div className={classes.body}>
-                        <Typography>Jane Doe</Typography>
-                        <Typography>I enjoy making music, writing and singing!</Typography>
+                    <div className={classes.profileDetails}>
+                        <img className={classes.profilePicture} src={Avatar} alt='profile-picture' />
+                        <div className={classes.body}>
+                            <Typography className={classes.profileDetailsText}>John Doe</Typography>
+                            <Typography className={classes.profileDetailsText}>I enjoy making music, writing and singing!</Typography>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>

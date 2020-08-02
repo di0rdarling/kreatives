@@ -6,7 +6,6 @@ const useStyles = makeStyles({
 
   root: {
     display: 'flex',
-    maxWidth: 1600
   }
 })
 
